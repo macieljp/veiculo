@@ -7,8 +7,11 @@ package exercicio_06;
 
 /**
  *
- * @author JoaoPaulo
+ * @author Joao Paulo Bernardino Maciel
+ * @author Josiel Faleiros Alves
  */
-public class  Carga extends Veiculo{
-    
+public class  Carga extends Veiculo implements Calc{
+    public int calcular(){
+    	return QtdRodas + VelocMax;
+    }
 }

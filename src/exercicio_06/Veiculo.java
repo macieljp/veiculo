@@ -7,7 +7,8 @@ package exercicio_06;
 
 /**
  *
- * @author JoaoPaulo
+ * @author Joao Paulo Bernardino Maciel
+ * @author Josiel Faleiros Alves
  */
 public abstract class Veiculo {
 
@@ -147,5 +148,7 @@ public abstract class Veiculo {
     public void setDataCadastro(String DataCadastro) {
         this.DataCadastro = DataCadastro;
     }
+
+    public abstract calcVel();
 
 }

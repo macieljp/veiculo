@@ -7,8 +7,9 @@ package exercicio_06;
 
 /**
  *
- * @author JoaoPaulo
+ * @author Joao Paulo Bernardino Maciel
+ * @author Josiel Faleiros Alves
  */
-public class Calc {
-    
+public interface Calc {
+    public void calcular();
 }

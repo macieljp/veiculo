@@ -7,8 +7,16 @@ package exercicio_06;
 
 /**
  *
- * @author JoaoPaulo
+ * @author Joao Paulo Bernardino Maciel
+ * @author Josiel Faleiros Alves
  */
-public class Passeio extends Veiculo{
-    
+public class Passeio extends Veiculo implements Calc{
+
+    public int calcular(){
+    	return Placa.replace(" ", "").trim().length() + 
+	    	Marca.replace(" ", "").trim().length() +
+	    	Modelo.replace(" ", "").trim().length() + 
+	    	Cor.replace(" ", "").trim().length();
+    }
+
 }
