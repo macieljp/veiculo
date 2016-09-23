@@ -11,5 +11,7 @@ package exercicio_06;
  * @author Josiel Faleiros Alves
  */
 public class BDVeicVet {
+    private Passeio[] passeio = new Passeio[50];
+    private Carga[] carga = new Carga[50];
     
 }
