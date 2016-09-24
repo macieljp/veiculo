@@ -11,12 +11,21 @@ package exercicio_06;
  * @author Josiel Faleiros Alves
  */
 public class Passeio extends Veiculo implements Calc{
+    private int qtdePassageiro;
 
     public int calcular(){
     	return placa.replace(" ", "").trim().length() +
 	    	marca.replace(" ", "").trim().length() +
 	    	modelo.replace(" ", "").trim().length() +
 	    	cor.replace(" ", "").trim().length();
+    }
+
+    public void setQtdePassageiro(int qtdePassageiro){
+        this.qtdePassageiro = qtdePassageiro;
+    }
+
+    public int getQtdePassageiro(){
+        return qtdePassageiro;
     }
 
 }
