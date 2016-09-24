@@ -13,10 +13,10 @@ package exercicio_06;
 public class Passeio extends Veiculo implements Calc{
 
     public int calcular(){
-    	return Placa.replace(" ", "").trim().length() + 
-	    	Marca.replace(" ", "").trim().length() +
-	    	Modelo.replace(" ", "").trim().length() + 
-	    	Cor.replace(" ", "").trim().length();
+    	return placa.replace(" ", "").trim().length() +
+	    	marca.replace(" ", "").trim().length() +
+	    	modelo.replace(" ", "").trim().length() +
+	    	cor.replace(" ", "").trim().length();
     }
 
 }

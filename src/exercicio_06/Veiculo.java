@@ -12,113 +12,113 @@ package exercicio_06;
  */
 public abstract class Veiculo {
 
-    private String Placa;
-    private String Marca;
-    private String Modelo;
-    private String Cor;
-    private int QtdRodas;
-    private int VelocMax;
+    private String placa;
+    private String marca;
+    private String modelo;
+    private String cor;
+    private int qtdRodas;
+    private int velocMax;
+    private String dataCadastro;
 
-    private String DataCadastro;
-    TstPlaca teste = new TstPlaca();
-    private Motor motor = new Motor();
+    private Motor motor;
 
     public Veiculo() {
+        motor = new Motor()
     }
 
-    public Veiculo(String Placa, String Marca, String Modelo, String Cor, int QtdRodas, int VelocMax, Motor motor, String DataCadastro) {
-        this.Placa = Placa;
-        this.Marca = Marca;
-        this.Modelo = Modelo;
-        this.Cor = Cor;
-        this.QtdRodas = QtdRodas;
-        this.VelocMax = VelocMax;
+    public Veiculo(String placa, String marca, String modelo, String cor, int qtdRodas, int velocMax, Motor motor, String dataCadastro) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cor = cor;
+        this.qtdRodas = qtdRodas;
+        this.velocMax = velocMax;
         this.motor = motor;
-        this.DataCadastro = DataCadastro;
+        this.dataCadastro = dataCadastro;
     }
 
     /**
      * @return the Placa
      */
     public String getPlaca() {
-        return Placa;
+        return placa;
     }
 
     /**
      * @param Placa the Placa to set
      */
-    public void setPlaca(String Placa) {
-        this.Placa = Placa;
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     /**
      * @return the Marca
      */
     public String getMarca() {
-        return Marca;
+        return marca;
     }
 
     /**
      * @param Marca the Marca to set
      */
-    public void setMarca(String Marca) {
-        this.Marca = Marca;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     /**
      * @return the Modelo
      */
     public String getModelo() {
-        return Modelo;
+        return modelo;
     }
 
     /**
      * @param Modelo the Modelo to set
      */
-    public void setModelo(String Modelo) {
-        this.Modelo = Modelo;
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     /**
      * @return the Cor
      */
     public String getCor() {
-        return Cor;
+        return cor;
     }
 
     /**
      * @param Cor the Cor to set
      */
-    public void setCor(String Cor) {
-        this.Cor = Cor;
+    public void setCor(String cor) {
+        this.cor = cor;
     }
 
     /**
      * @return the QtdRodas
      */
     public int getQtdRodas() {
-        return QtdRodas;
+        return qtdRodas;
     }
 
     /**
      * @param QtdRodas the QtdRodas to set
      */
-    public void setQtdRodas(int QtdRodas) {
-        this.QtdRodas = QtdRodas;
+    public void setQtdRodas(int qtdRodas) {
+        this.qtdRodas = qtdRodas;
     }
 
     /**
      * @return the VelocMax
      */
     public int getVelocMax() {
-        return VelocMax;
+        return velocMax;
     }
 
     /**
      * @param VelocMax the VelocMax to set
      */
-    public void setVelocMax(int VelocMax) {
-        this.VelocMax = VelocMax;
+    public void setVelocMax(int velocMax) {
+        this.velocMax = velocMax;
     }
 
     /**
@@ -139,14 +139,14 @@ public abstract class Veiculo {
      * @return the DataCadastro
      */
     public String getDataCadastro() {
-        return DataCadastro;
+        return dataCadastro;
     }
 
     /**
      * @param DataCadastro the DataCadastro to set
      */
-    public void setDataCadastro(String DataCadastro) {
-        this.DataCadastro = DataCadastro;
+    public void setDataCadastro(String dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     public abstract calcVel();

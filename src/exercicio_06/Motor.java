@@ -11,6 +11,8 @@ package exercicio_06;
  * @author Josiel Faleiros Alves
  */
 public class Motor {
+    private int qtdPistoes;
+    private int potencia;
 
     public Motor() {
     }
@@ -19,11 +21,6 @@ public class Motor {
         this.qtdPistoes = qtdPistoes;
         this.potencia = potencia;
     }
-    
-    
-
-    private int qtdPistoes;
-    private int potencia;
 
     /**
      * @return the qtdPistoes
