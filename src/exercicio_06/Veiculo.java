@@ -1,10 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package exercicio_06;
-
 /**
  *
  * @author Joao Paulo Bernardino Maciel
@@ -23,7 +17,7 @@ public abstract class Veiculo {
     private Motor motor;
 
     public Veiculo() {
-        motor = new Motor()
+        motor = new Motor();
     }
 
     public Veiculo(String placa, String marca, String modelo, String cor, int qtdRodas, int velocMax, Motor motor, String dataCadastro) {
@@ -149,6 +143,6 @@ public abstract class Veiculo {
         this.dataCadastro = dataCadastro;
     }
 
-    public abstract calcVel();
+    public abstract int calcVel();
 
 }
