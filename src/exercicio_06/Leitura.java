@@ -12,5 +12,8 @@ package exercicio_06;
  */
 public class Leitura {
 
-    
+    public String inDados(String entrada){
+        
+    }
+
 }
