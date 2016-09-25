@@ -92,6 +92,7 @@ public class BDVeicVet {
             temp.setQtdRodas(passeio.getQtdRodas());
             temp.setVelocMax(passeio.getVelocMax());
             temp.setDataCadastro(passeio.getDataCadastro());
+            temp.setQtdePassageiro(passeio.getQtdePassageiro());
         }
     }
 
@@ -109,6 +110,8 @@ public class BDVeicVet {
             temp.setQtdRodas(carga.getQtdRodas());
             temp.setVelocMax(carga.getVelocMax());
             temp.setDataCadastro(carga.getDataCadastro());
+            temp.setTara(carga.getTara());
+            temp.setCargaMax(carga.getCargaMax());
         }
     }
 
