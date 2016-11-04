@@ -1,65 +1,54 @@
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Joao Paulo Bernardino Maciel
  * @author Josiel Faleiros Alves
  */
 public class BDVeicVet {
-	//TODO alterar para List
-    private Passeio[] passeio;
-    private Carga[] carga;
+    private List<Passeio> passeio;
+    private List<Carga> carga;
 
     public BDVeicVet(){
-        passeio = new Passeio[50];
-        carga = new Carga[50];
+        passeio = new ArrayList<Passeio>();
+        carga = new ArrayList<Carga>();
     }
 
     /*
      *1)_ Cadastrar Veículo de Passeio
      */
     public void cadastrarVeiculoPasseio(Passeio passeio){
-        this.passeio[getPosicaoPasseio()] = passeio;
+        this.passeio.add(passeio);
     }
 
     /*
      *2)_ Cadastrar Veículo de Carga
      */
     public void cadastrarVeiculoCarga(Carga carga){
-        this.carga[getPosicaoCarga()] = carga;
+        this.carga.add(carga);
     }
 
     /*
      *3)_ Imprimir Todos os Veículos de Passeio
      */
-    public Passeio[] procurarTodosPasseio(){
-        int max = getPosicaoPasseio();
-        Passeio[] result = new Passeio[max];
-        for (int i = 0; i < max ; i++ ) {
-            result[i] = passeio[i];
-        }
-        return result;
+    public List<Passeio> procurarTodosPasseio(){
+        return passeio;
     }
 
     /*
      *4)_ Imprimir Todos os Veículos de Carga
      */
-    public Carga[] procurarTodosCarga(){
-        int max = getPosicaoCarga();
-        Carga[] result = new Carga[max];
-        for (int i = 0; i < max ; i++ ) {
-            result[i] = carga[i];
-        }
-        return result;
+    public List<Carga> procurarTodosCarga(){
+        return carga;
     }
 
     /*
      *5)_ Imprimir Veículo de Passeio pela Placa
      */
     public Passeio procurarPasseioPorPlaca(String placa){
-        placa = placa.trim();
-        for (int i = 0, max = getPosicaoPasseio(); i < max; i++) {
-            if (passeio[i].getPlaca().equals(placa)) {
-                return passeio[i];
-            }
+        for (Passeio pass : passeio) {
+        	if(pass.equals(placa)) return pass;
         }
         return null;
     }
@@ -68,11 +57,8 @@ public class BDVeicVet {
      *6)_ Imprimir Veículo de Carga pela Placa
      */
     public Carga procurarCargaPorPlaca(String placa){
-        placa = placa.trim();
-        for (int i = 0, max = getPosicaoCarga(); i < max; i++) {
-            if(carga[i].getPlaca().equals(placa)){
-                return carga[i];
-            }
+        for (Carga temp : carga) {
+        	if(temp.equals(placa)) return temp;
         }
         return null;
     }
@@ -80,11 +66,10 @@ public class BDVeicVet {
     /*
      *7)_ Alterar dados do Veículo de Passeio pela Placa
      */
-    public void alterarDadosPasseio(Passeio passeio, String placa){
-        Passeio temp = procurarPasseioPorPlaca(placa);
+    public void alterarDadosPasseio(Passeio passeio){
+        Passeio temp = procurarPasseioPorPlaca(passeio.getPlaca());
         if(temp != null){
             temp.setQtdePassageiro(passeio.getQtdePassageiro());
-            temp.setPlaca(passeio.getPlaca());
             temp.setMarca(passeio.getMarca());
             temp.setModelo(passeio.getModelo());
             temp.setCor(passeio.getCor());
@@ -98,8 +83,8 @@ public class BDVeicVet {
     /*
      *8)_ Alterar dados do Veículo de Carga pela Placa
      */
-    public void alterarDadosCarga(Carga carga, String placa){
-        Carga temp = procurarCargaPorPlaca(placa);
+    public void alterarDadosCarga(Carga carga){
+        Carga temp = procurarCargaPorPlaca(carga.getPlaca());
         if(temp != null){
             temp.setPlaca(carga.getPlaca());
             temp.setMarca(carga.getMarca());
@@ -111,32 +96,6 @@ public class BDVeicVet {
             temp.setTara(carga.getTara());
             temp.setCargaMax(carga.getCargaMax());
         }
-    }
-
-    /****** Utilitários ******/
-
-    /*
-     *Retorna a posição da próxima inserção
-     */
-    private int getPosicaoPasseio(){
-        int i = 0;
-        for (Passeio passV : passeio ) {
-            if(passV == null) return i;
-            i++;
-        }
-        return i;
-    }
-
-    /*
-     *Retorna a posição da próxima inserção
-     */
-    private int getPosicaoCarga(){
-        int i = 0;
-        for(Carga cargV : carga){
-            if(cargV == null) return i;
-            i++;
-        }
-        return i;
     }
 
 }
