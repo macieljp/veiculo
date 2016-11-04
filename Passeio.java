@@ -3,7 +3,7 @@
  * @author Joao Paulo Bernardino Maciel
  * @author Josiel Faleiros Alves
  */
-public class Passeio extends Veiculo implements Calc{
+public class Passeio extends Veiculo{
     private int qtdePassageiro;
 
     public int calcular(){
@@ -22,7 +22,7 @@ meio da classe Teste:
     */
     @Override
     public int calcVel(){
-        return velocMax * 1000;
+        return getVelocMax() * 1000;
     }
 
     public void setQtdePassageiro(int qtdePassageiro){

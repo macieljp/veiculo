@@ -3,7 +3,7 @@
  * @author Joao Paulo Bernardino Maciel
  * @author Josiel Faleiros Alves
  */
-public class  Carga extends Veiculo implements Calc{
+public class  Carga extends Veiculo {
     private int tara;
     private int cargaMax;
 
@@ -16,7 +16,7 @@ meio da classe Teste:
     */
     @Override
     public int calcVel(){
-        return velocMax * 100000;
+        return getVelocMax() * 100000;
     }
 
     public int calcular(){

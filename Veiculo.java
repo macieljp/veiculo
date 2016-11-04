@@ -3,7 +3,7 @@
  * @author Joao Paulo Bernardino Maciel
  * @author Josiel Faleiros Alves
  */
-public abstract class Veiculo {
+public abstract class Veiculo implements Calc {
 
     private String placa;
     private String marca;
@@ -11,15 +11,13 @@ public abstract class Veiculo {
     private String cor;
     private int qtdRodas;
     private int velocMax;
-    private String dataCadastro;
-
     private Motor motor;
 
     public Veiculo() {
         motor = new Motor();
     }
 
-    public Veiculo(String placa, String marca, String modelo, String cor, int qtdRodas, int velocMax, Motor motor, String dataCadastro) {
+    public Veiculo(String placa, String marca, String modelo, String cor, int qtdRodas, int velocMax, Motor motor) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -27,7 +25,6 @@ public abstract class Veiculo {
         this.qtdRodas = qtdRodas;
         this.velocMax = velocMax;
         this.motor = motor;
-        this.dataCadastro = dataCadastro;
     }
 
     /**
@@ -128,19 +125,6 @@ public abstract class Veiculo {
         this.motor = motor;
     }
 
-    /**
-     * @return the DataCadastro
-     */
-    public String getDataCadastro() {
-        return dataCadastro;
-    }
-
-    /**
-     * @param DataCadastro the DataCadastro to set
-     */
-    public void setDataCadastro(String dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
 
     public abstract int calcVel();
 

@@ -4,6 +4,7 @@
  * @author Josiel Faleiros Alves
  */
 public class BDVeicVet {
+	//TODO alterar para List
     private Passeio[] passeio;
     private Carga[] carga;
 
@@ -90,7 +91,6 @@ public class BDVeicVet {
             temp.setMotor(passeio.getMotor());
             temp.setQtdRodas(passeio.getQtdRodas());
             temp.setVelocMax(passeio.getVelocMax());
-            temp.setDataCadastro(passeio.getDataCadastro());
             temp.setQtdePassageiro(passeio.getQtdePassageiro());
         }
     }
@@ -108,7 +108,6 @@ public class BDVeicVet {
             temp.setMotor(carga.getMotor());
             temp.setQtdRodas(carga.getQtdRodas());
             temp.setVelocMax(carga.getVelocMax());
-            temp.setDataCadastro(carga.getDataCadastro());
             temp.setTara(carga.getTara());
             temp.setCargaMax(carga.getCargaMax());
         }
