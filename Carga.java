@@ -1,4 +1,3 @@
-package exercicio_06;
 /**
  *
  * @author Joao Paulo Bernardino Maciel
