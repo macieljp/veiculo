@@ -12,8 +12,7 @@ caracteres (ex.: “abc-1111”), caso não tenha, deverá informar o usuário e
 de valores para a placa.
 	 */
     public boolean certificPlaca(String placa){
-    	//TODO
-        return false;
+        return (placa.length() == 8);
     }
 
 }

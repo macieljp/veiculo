@@ -27,6 +27,7 @@ public abstract class Veiculo implements Calc {
         this.motor = motor;
     }
 
+
     /**
      * @return the Placa
      */
@@ -107,9 +108,14 @@ public abstract class Veiculo implements Calc {
     /**
      * @param VelocMax the VelocMax to set
      */
-    public void setVelocMax(int velocMax) {
-        this.velocMax = velocMax;
-    }
+    public void setVelocMax(int velocMax) throws VelocException{
+		if (velocMax >= 100 && velocMax <= 250){
+			this.velocMax = velocMax;
+		}
+		else{
+			throw new VelocException();
+		}
+	}
 
     /**
      * @return the motor

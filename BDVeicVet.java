@@ -18,15 +18,17 @@ public class BDVeicVet {
     /*
      *1)_ Cadastrar Veículo de Passeio
      */
-    public void cadastrarVeiculoPasseio(Passeio passeio){
-        this.passeio.add(passeio);
+    public void cadastrarVeiculoPasseio(Passeio passeio) throws VeicExistException{
+    	if(procurarPasseioPorPlaca(passeio.getPlaca()) != null) throw new VeicExistException();
+    	else this.passeio.add(passeio);
     }
 
     /*
      *2)_ Cadastrar Veículo de Carga
      */
-    public void cadastrarVeiculoCarga(Carga carga){
-        this.carga.add(carga);
+    public void cadastrarVeiculoCarga(Carga carga) throws VeicExistException{
+    	if(procurarCargaPorPlaca(carga.getPlaca()) != null) throw new VeicExistException();
+    	else this.carga.add(carga);
     }
 
     /*
@@ -48,7 +50,7 @@ public class BDVeicVet {
      */
     public Passeio procurarPasseioPorPlaca(String placa){
         for (Passeio pass : passeio) {
-        	if(pass.equals(placa)) return pass;
+        	if(pass.getPlaca().equals(placa)) return pass;
         }
         return null;
     }
@@ -58,7 +60,7 @@ public class BDVeicVet {
      */
     public Carga procurarCargaPorPlaca(String placa){
         for (Carga temp : carga) {
-        	if(temp.equals(placa)) return temp;
+        	if(temp.getPlaca().equals(placa)) return temp;
         }
         return null;
     }
@@ -75,7 +77,11 @@ public class BDVeicVet {
             temp.setCor(passeio.getCor());
             temp.setMotor(passeio.getMotor());
             temp.setQtdRodas(passeio.getQtdRodas());
-            temp.setVelocMax(passeio.getVelocMax());
+            try {
+				temp.setVelocMax(passeio.getVelocMax());
+			} catch (VelocException e) {
+				e.printException();
+			}
             temp.setQtdePassageiro(passeio.getQtdePassageiro());
         }
     }
@@ -92,7 +98,11 @@ public class BDVeicVet {
             temp.setCor(carga.getCor());
             temp.setMotor(carga.getMotor());
             temp.setQtdRodas(carga.getQtdRodas());
-            temp.setVelocMax(carga.getVelocMax());
+            try {
+				temp.setVelocMax(carga.getVelocMax());
+			} catch (VelocException e) {
+				e.printException();
+			}
             temp.setTara(carga.getTara());
             temp.setCargaMax(carga.getCargaMax());
         }
